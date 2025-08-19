@@ -1,0 +1,144 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated color tokens to match mystical astrology theme */
+  --background: oklch(1 0 0); /* White background */
+  --foreground: oklch(0.35 0 0); /* Dark slate gray for text */
+  --card: oklch(0.98 0.02 340); /* Light pink for card backgrounds */
+  --card-foreground: oklch(0.35 0 0); /* Dark slate gray for card text */
+  --popover: oklch(1 0 0); /* White for popovers */
+  --popover-foreground: oklch(0.35 0 0); /* Dark slate gray for popover text */
+  --primary: oklch(0.45 0.22 350); /* Rose color for primary elements */
+  --primary-foreground: oklch(1 0 0); /* White text on primary elements */
+  --secondary: oklch(0.65 0.25 330); /* Accent pink for secondary actions */
+  --secondary-foreground: oklch(1 0 0); /* White text on secondary elements */
+  --muted: oklch(0.98 0.02 340); /* Light pink for muted elements */
+  --muted-foreground: oklch(0.35 0 0); /* Dark slate gray for muted text */
+  --accent: oklch(0.65 0.25 330); /* Pink for buttons and highlights */
+  --accent-foreground: oklch(1 0 0); /* White text on accent elements */
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.35 0 0); /* Dark slate gray for borders */
+  --input: oklch(0.98 0.02 340); /* Light pink for input fields */
+  --ring: oklch(0.65 0.25 330); /* Pink for focus rings */
+  --chart-1: oklch(0.45 0.22 350); /* Rose for first chart element */
+  --chart-2: oklch(0.65 0.25 330); /* Pink for second chart element */
+  --chart-3: oklch(0.35 0 0); /* Dark slate for third chart element */
+  --chart-4: oklch(0.98 0.02 340); /* Light pink for fourth chart element */
+  --chart-5: oklch(1 0 0); /* White for fifth chart element */
+  --radius: 0.5rem; /* Rounded corners for softer feel */
+  --sidebar: oklch(0.98 0.02 340); /* Light pink for sidebar background */
+  --sidebar-foreground: oklch(0.35 0 0); /* Dark slate gray for sidebar text */
+  --sidebar-primary: oklch(0.45 0.22 350); /* Rose color for primary sidebar elements */
+  --sidebar-primary-foreground: oklch(1 0 0); /* White text on primary sidebar elements */
+  --sidebar-accent: oklch(0.65 0.25 330); /* Accent color for sidebar elements */
+  --sidebar-accent-foreground: oklch(1 0 0); /* White text on sidebar accents */
+  --sidebar-border: oklch(0.35 0 0); /* Dark slate gray for sidebar borders */
+  --sidebar-ring: oklch(0.65 0.25 330); /* Pink for sidebar focus rings */
+}
+
+.dark {
+  /* Updated dark mode colors for mystical night theme */
+  --background: oklch(0.08 0.02 270); /* Deep dark blue-purple background */
+  --foreground: oklch(0.95 0.02 340); /* Light pink-white for text */
+  --card: oklch(0.12 0.03 270); /* Slightly lighter dark blue-purple for cards */
+  --card-foreground: oklch(0.95 0.02 340); /* Light pink-white for card text */
+  --popover: oklch(0.12 0.03 270); /* Dark blue-purple for popovers */
+  --popover-foreground: oklch(0.95 0.02 340); /* Light pink-white for popover text */
+  --primary: oklch(0.75 0.25 330); /* Bright pink for primary elements */
+  --primary-foreground: oklch(0.08 0.02 270); /* Dark background for primary text */
+  --secondary: oklch(0.25 0.05 270); /* Muted dark blue-purple for secondary */
+  --secondary-foreground: oklch(0.95 0.02 340); /* Light pink-white for secondary text */
+  --muted: oklch(0.15 0.03 270); /* Muted dark blue-purple */
+  --muted-foreground: oklch(0.7 0.02 340); /* Muted light pink for text */
+  --accent: oklch(0.75 0.25 330); /* Bright pink for accents */
+  --accent-foreground: oklch(0.08 0.02 270); /* Dark background for accent text */
+  --destructive: oklch(0.6 0.25 15); /* Orange-red for destructive actions */
+  --destructive-foreground: oklch(0.95 0.02 340); /* Light text on destructive */
+  --border: oklch(0.25 0.05 270); /* Muted dark blue-purple for borders */
+  --input: oklch(0.15 0.03 270); /* Dark blue-purple for inputs */
+  --ring: oklch(0.75 0.25 330); /* Bright pink for focus rings */
+  --chart-1: oklch(0.75 0.25 330); /* Bright pink for charts */
+  --chart-2: oklch(0.65 0.2 300); /* Purple for charts */
+  --chart-3: oklch(0.55 0.15 240); /* Blue for charts */
+  --chart-4: oklch(0.45 0.1 180); /* Teal for charts */
+  --chart-5: oklch(0.85 0.1 60); /* Gold for charts */
+  --sidebar: oklch(0.1 0.02 270); /* Very dark blue-purple for sidebar */
+  --sidebar-foreground: oklch(0.95 0.02 340); /* Light pink-white for sidebar text */
+  --sidebar-primary: oklch(0.75 0.25 330); /* Bright pink for primary sidebar */
+  --sidebar-primary-foreground: oklch(0.08 0.02 270); /* Dark text on primary sidebar */
+  --sidebar-accent: oklch(0.25 0.05 270); /* Muted accent for sidebar */
+  --sidebar-accent-foreground: oklch(0.95 0.02 340); /* Light text on sidebar accent */
+  --sidebar-border: oklch(0.25 0.05 270); /* Muted border for sidebar */
+  --sidebar-ring: oklch(0.75 0.25 330); /* Bright pink for sidebar focus */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Added custom styles for mystical astrology theme */
+  .star-pattern {
+    background-image: radial-gradient(2px 2px at 20px 30px, currentColor, transparent),
+      radial-gradient(2px 2px at 40px 70px, currentColor, transparent),
+      radial-gradient(1px 1px at 90px 40px, currentColor, transparent),
+      radial-gradient(1px 1px at 130px 80px, currentColor, transparent),
+      radial-gradient(2px 2px at 160px 30px, currentColor, transparent);
+    background-repeat: repeat;
+    background-size: 200px 100px;
+  }
+
+  .zodiac-glow {
+    box-shadow: 0 0 20px rgba(236, 72, 153, 0.3);
+  }
+
+  .mystical-gradient {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  }
+}
